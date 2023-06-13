@@ -1,0 +1,15 @@
+.Cardsdiv{
+display: grid;
+grid-template-columns: 0.8fr 0.8fr 0.8fr;
+margin: 20px;
+gap: 30px 90px;
+text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .Cardsdiv{
+    grid-template-columns: 0.8fr;
+    margin-left: 30px;
+    width: 90%;
+}
+}

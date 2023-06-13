@@ -1,0 +1,14 @@
+.divCard{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    justify-content: center;
+}
+
+.card{
+    flex-grow: 1%;
+    flex-shrink: 0;
+    text-align: center;
+}

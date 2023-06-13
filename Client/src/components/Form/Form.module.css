@@ -1,0 +1,59 @@
+.containForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(180,180,180,0.4);
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 5px 15px 15px rgba(150,150,150,0.7);
+    margin: 5%;
+    height: 30%;
+    width: 30%;
+}
+
+.warning{
+    border: 3px solid red;
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.succes{
+    border: 3px solid green;
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+.error{
+    color: red;
+    font-size: 15px;
+}
+
+.label{
+    color: rgb(51, 220, 13);
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.buton{
+    margin: 20%;
+    width: 120px;
+    background-color: rgb(75, 217, 43);
+    color: white;
+    padding: 4px;
+    border: 2px double wheat;
+    border-radius: 5px;
+}
+
+.buton:hover{
+    background-color: rgba(75, 217, 43,0.5);
+    border-color: rgb(40,40,40);
+    color: whitesmoke;
+    box-shadow: 2px 2px 10px 10px rgba(50, 130, 50, 0.7);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 70%;
+    margin: 20%;   
+}

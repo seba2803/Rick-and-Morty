@@ -1,0 +1,10 @@
+.fondo{
+    display: flex;
+    width: 50%;
+    height: 50%;
+    background-color: antiquewhite;
+}
+
+.image{
+    height: 50%;
+}
