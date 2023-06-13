@@ -20,6 +20,7 @@ http.createServer((req,res)=>{
 
         res.writeHead(200, {'Content-Type': 'application/json'});
         return res.end(JSON.stringify(obj));
+        
     }
 
 }).listen(3001,'localhost');
