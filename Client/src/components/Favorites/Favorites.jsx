@@ -35,7 +35,7 @@ const Favorites = () => {
                     <option value="unknown">unknown</option>
                 </select>
 
-        {myfavorites.map(({id,name,status,species,gender,origin,image,onClose}) => {
+        {myfavorites?.map(({id,name,status,species,gender,origin,image,onClose}) => {
                 return( 
                 <div className={style.card}>
                 <Card
@@ -44,7 +44,7 @@ const Favorites = () => {
                  status = {status}
                  species = {species}
                  gender = {gender}
-                 origin = {origin.name}
+                 origin = {origin}
                  image = {image}
                  onClose={onClose}
                 />
