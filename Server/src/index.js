@@ -1,17 +1,29 @@
-const http = require('http');
-const getCharById = require('./controllers/getCharById');
+const express = require('express');
+const routes = require('./routes/index');
 
-http.createServer((req,res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    const {url} = req;
+const server = express();
 
-    if(url.includes('/rickandmorty/character')){
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+       'Access-Control-Allow-Headers',
+       'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header(
+       'Access-Control-Allow-Methods',
+       'GET, POST, OPTIONS, PUT, DELETE'
+    );
+    next();
+ });
 
-        console.log('se hizo una peticion');
+ //middleware que permite usar put,post
+ server.use(express.json());
 
-        const id = url.slice(24);
-        
-        getCharById(res,id);
-    }
+ //middleware que permite modularizar rutas con un path /rickandmorty
+ server.use('/rickandmorty', routes);
 
-}).listen(3001,'localhost');
+const PORT = 3001;
+
+
+server.listen(PORT, ()=> console.log('Server raised in port: ' + PORT));

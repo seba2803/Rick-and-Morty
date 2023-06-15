@@ -7,6 +7,7 @@ import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate  } from 'react-router-dom';
+import axios from 'axios';
 
 function App() {
 
@@ -14,27 +15,37 @@ function App() {
 
    const [access,setAccess] = useState(false);
 
-   const EMAIL = 'sebav@mail.com';
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
+   }
 
-   const PASSWORD = 'Jardin2003';
+   // const EMAIL = 'sebav@mail.com';
 
-   const login = (userData) => {
+   // const PASSWORD = 'Jardin2003';
 
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
+   // const login = (userData) => {
 
-         navigate('/home');
-      }else{
+   //    if (userData.password === PASSWORD && userData.email === EMAIL) {
+   //       setAccess(true);
 
-         alert('tu email o contraseña no son correctas');
-      }
-   };
+   //       navigate('/home');
+   //    }else{
 
-   useEffect(() => {
+   //       alert('tu email o contraseña no son correctas');
+   //    }
+   // };
+
+   // useEffect(() => {
       
-      !access && navigate('/');
+   //    !access && navigate('/');
 
-   }, [access]);
+   // }, [access]);
 
    const [characters,setCharacters] = useState([]);
 
